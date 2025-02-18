@@ -1,0 +1,51 @@
+[build-system]
+requires = ["hatchling", "hatch-vcs"]
+build-backend = "hatchling.build"
+
+[project]
+name = "comportsniffer"
+dynamic = ["version"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+description = "Sniffing port communication between port and real device"
+requires-python = ">=3.10"
+readme = "README.md"
+authors = [
+  { name="Mikhail Trunov", email="mikhail.trunov@gmail.com" },
+]
+maintainers = [
+  { name="Mikhail Trunov", email="mikhail.trunov@gmail.com" },
+]
+dependencies = [
+  "pyserial==3.5",
+]
+
+[project.optional-dependencies]
+dev = [  
+  "notebook==7.1.2",
+]
+
+[project.urls]
+Repository = "https://github.com/eximius8/comportsniffer"
+
+[tool.hatch.version]
+source = "vcs"
+
+[tool.hatch.build.targets.sdist]
+include = [
+  "src/*",
+]
+exclude = [
+  "tests",
+  "azure-pipelines",
+  ".gitignore",
+  ".git",
+  "demo",
+  "auxiliary"
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/comportsniffer"]
