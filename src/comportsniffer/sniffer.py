@@ -125,8 +125,8 @@ def release_port(port_name):
         print(f"Couldn't access {port_name}")
 
 
-def run_bridge(real_port, virtual_port, baud_rate=1000000):
-    bridge = ComPortBridge(real_port, virtual_port, baud_rate)
+def run_bridge(real_port, virtual_port, log_file, baud_rate=1000000):
+    bridge = ComPortBridge(real_port, virtual_port, log_file, baud_rate)
     release_port(real_port)
     release_port(virtual_port)
     try:
