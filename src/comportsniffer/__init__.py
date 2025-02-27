@@ -1,1 +1,3 @@
-from .sniffer import run_bridge as run_bridge
+from comportsniffer.bridge import ComPortBridge
+
+__all__ = ["ComPortBridge"]

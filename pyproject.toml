@@ -21,6 +21,8 @@ maintainers = [
 ]
 dependencies = [
   "pyserial==3.5",
+  "typer>=0.7.0",
+  "rich>=12.0.0",
 ]
 
 [project.optional-dependencies]
